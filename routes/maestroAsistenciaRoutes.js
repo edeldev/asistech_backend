@@ -1,12 +1,11 @@
-import express from 'express'
-const router = express.Router()
+import express from "express";
+const router = express.Router();
 
-import { obtenerAsistencias, nuevaAsistencia } from '../controllers/maestroAsistenciaController.js'
-import checkAuthMaestro from '../middlewares/checkAuthMaestro.js'
+import {
+  obtenerAsistencias,
+  nuevaAsistencia,
+} from "../controllers/maestroAsistenciaController.js";
 
-router
-    .route('/')
-    .get(checkAuthMaestro, obtenerAsistencias)
-    .post(checkAuthMaestro, nuevaAsistencia)
+router.route("/").get(obtenerAsistencias).post(nuevaAsistencia);
 
-export default router
+export default router;
