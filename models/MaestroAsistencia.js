@@ -78,6 +78,10 @@ const maestroAsistenciaSchema = mongoose.Schema(
       type: String,
       default: "",
     },
+    entrada: {
+      type: String,
+      default: "",
+    },
     creador: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Maestro",

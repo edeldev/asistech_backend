@@ -21,7 +21,7 @@ const nuevaAsistencia = async (req, res) => {
       matricula: req.body.matricula,
     });
 
-    const { tipoHora } = req.body;
+    const { tipoHora, entrada } = req.body;
 
     if (!maestro) {
       const error = new Error("Maestro no encontrado");
@@ -63,6 +63,7 @@ const nuevaAsistencia = async (req, res) => {
     maestro.fecha = fechaNumero;
     maestro.dia = nombreDia;
     maestro.tipoHora = tipoHora;
+    maestro.entrada = entrada;
     maestro.creador = req.usuario;
 
     // Verificar si ya existe una asistencia para la misma fecha y hora
@@ -78,6 +79,8 @@ const nuevaAsistencia = async (req, res) => {
       );
       return res.status(400).json({ msg: error.message });
     }
+
+    // ---------------------------------
 
     // Crear y guardar la nueva asistencia
     const asistencia = new MaestroAsistencia({
@@ -100,6 +103,7 @@ const nuevaAsistencia = async (req, res) => {
       horaOnce: tipoHora === "horaOnce" ? horaAMPM : "",
       horaDoce: tipoHora === "horaDoce" ? horaAMPM : "",
       tipoHora: tipoHora,
+      entrada: entrada,
       creador: maestro.creador,
     });
 
