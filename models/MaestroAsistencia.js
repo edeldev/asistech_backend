@@ -82,6 +82,11 @@ const maestroAsistenciaSchema = mongoose.Schema(
       type: String,
       default: "",
     },
+    tipoAsistencia: {
+      type: String,
+      enum: ["presencial", "enLinea"],
+      required: true,
+    },
     creador: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Maestro",
