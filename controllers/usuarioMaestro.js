@@ -42,6 +42,8 @@ const autenticarMaestro = async (req, res) => {
       matricula: usuario.matricula,
       materia: usuario.materia,
       token: generarJWT(usuario._id),
+      horasPermitidasPresencial: usuario.horasPermitidasPresencial,
+      horasPermitidasLinea: usuario.horasPermitidasLinea,
     });
   } else {
     const error = new Error("El password es incorrecto");

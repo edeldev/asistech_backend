@@ -82,6 +82,19 @@ const nuevaAsistencia = async (req, res) => {
       return res.status(400).json({ msg: error.message });
     }
 
+    const horasPermitidas =
+      tipoAsistencia === "presencial"
+        ? maestro.horasPermitidasPresencial
+        : maestro.horasPermitidasLinea;
+
+    // Verificar si la hora proporcionada está permitida
+    if (!horasPermitidas.includes(tipoHora)) {
+      const error = new Error(
+        "Esta hora no está permitida para la asistencia " + tipoAsistencia
+      );
+      return res.status(400).json({ msg: error.message });
+    }
+
     // ---------------------------------
 
     // Crear y guardar la nueva asistencia

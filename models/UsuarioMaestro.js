@@ -27,6 +27,14 @@ const usuarioSchemaMaestros = mongoose.Schema(
       type: String,
       default: "",
     },
+    horasPermitidasPresencial: {
+      type: [String],
+      default: ["", "", "", "", "", "", "", "", "", "", "", ""],
+    },
+    horasPermitidasLinea: {
+      type: [String],
+      default: ["", "", "", "", "", "", "", "", "", "", "", ""],
+    },
   },
   {
     timestamps: true,
