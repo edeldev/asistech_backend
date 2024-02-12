@@ -1,5 +1,5 @@
 import UsuarioAlumno from "../models/UsuarioAlumno.js";
-import generarId from "../helpers/generarID.js";
+import generarId from "../helpers/generarId.js";
 import generarJWT from "../helpers/generarJWT.js";
 
 // Crear nuevo usuario
