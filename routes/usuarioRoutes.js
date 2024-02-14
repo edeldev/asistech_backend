@@ -7,6 +7,7 @@ import {
   perfilCoordinacion,
   autenticarCoordinacion,
 } from "../controllers/usuarioCoordinacion.js";
+import { eliminarTodasAsistencias } from "../controllers/maestroAsistenciaController.js";
 import checkAuthCoordinacion from "../middlewares/checkAuthCoordinacion.js";
 
 //*MAESTROS
@@ -29,6 +30,7 @@ import checkAuthAlumno from "../middlewares/checkAuthAlumno.js";
 router.post("/coordinacion-registrar", registrarCoordinacion);
 router.post("/login-coordinacion", autenticarCoordinacion);
 router.get("/perfil-coordinacion", checkAuthCoordinacion, perfilCoordinacion);
+router.delete("/area-coordinacion/:id", eliminarTodasAsistencias);
 
 //! MAESTROS
 router.post("/maestro-registrar", registrarMaestro);
