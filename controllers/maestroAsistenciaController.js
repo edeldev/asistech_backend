@@ -131,4 +131,31 @@ const nuevaAsistencia = async (req, res) => {
   }
 };
 
-export { obtenerAsistencias, nuevaAsistencia };
+const eliminarTodasAsistencias = async (req, res) => {
+  const coordinacionId = req.params.coordinadorId;
+
+  try {
+    const asistenciasCreador = await MaestroAsistencia.find({
+      creador: coordinacionId,
+    });
+
+    if (asistenciasCreador.length === 0) {
+      return res.status(404).json({
+        mensaje: "No se encontraron asistencias para el coordinador.",
+      });
+    }
+
+    await MaestroAsistencia.deleteMany({ creador: coordinacionId });
+
+    res.json({
+      mensaje: "Todas las asistencias han sido eliminadas correctamente.",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      mensaje: "Error interno del servidor al eliminar asistencias.",
+    });
+  }
+};
+
+export { obtenerAsistencias, nuevaAsistencia, eliminarTodasAsistencias };
