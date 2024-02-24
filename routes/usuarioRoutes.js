@@ -18,14 +18,6 @@ import {
 } from "../controllers/usuarioMaestro.js";
 import checkAuthMaestro from "../middlewares/checkAuthMaestro.js";
 
-//*ALUMNOS
-import {
-  registrarAlumno,
-  perfilAlumno,
-  autenticarAlumno,
-} from "../controllers/usuarioAlumno.js";
-import checkAuthAlumno from "../middlewares/checkAuthAlumno.js";
-
 //! COORDINACION
 router.post("/coordinacion-registrar", registrarCoordinacion);
 router.post("/login-coordinacion", autenticarCoordinacion);
@@ -36,10 +28,5 @@ router.delete("/area-coordinacion/:id", eliminarTodasAsistencias);
 router.post("/maestro-registrar", registrarMaestro);
 router.post("/login-maestro", autenticarMaestro);
 router.get("/perfil-maestro", checkAuthMaestro, perfilMaestro);
-
-//! ALUMNOS
-router.post("/alumno-registrar", registrarAlumno);
-router.post("/login-alumno", autenticarAlumno);
-router.get("/perfil-alumno", checkAuthAlumno, perfilAlumno);
 
 export default router;
