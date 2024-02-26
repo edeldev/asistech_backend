@@ -1,5 +1,6 @@
 import MaestroAsistencia from "../models/MaestroAsistencia.js";
 import UsuarioMaestros from "../models/UsuarioMaestro.js";
+import UsuarioCoordinacion from "../models/UsuarioCoordinacion.js";
 import {
   obtenerFechaFormateada,
   obtenerNombreMes,
