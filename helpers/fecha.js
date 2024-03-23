@@ -12,10 +12,7 @@ const obtenerFechaFormateada = () => {
     timeZone: "America/Monterrey",
   });
 
-  return formatoFecha.formatToParts(fechaActual).reduce((acc, part) => {
-    acc[part.type] = part.value;
-    return acc;
-  }, {});
+  return formatoFecha.format(fechaActual);
 };
 
 const obtenerNombreMes = () => {
