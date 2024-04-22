@@ -26,51 +26,99 @@ const maestroAsistenciaSchema = mongoose.Schema(
       type: String,
       default: "",
     },
-    horaUno: {
+    horaUno8_00am: {
       type: String,
       default: "",
     },
-    horaDos: {
+    horaDos8_50: {
       type: String,
       default: "",
     },
-    horaTres: {
+    horaUno8_50: {
       type: String,
       default: "",
     },
-    horaCuatro: {
+    horaDos9_40: {
       type: String,
       default: "",
     },
-    horaCinco: {
+    horaUno9_40: {
       type: String,
       default: "",
     },
-    horaSeis: {
+    horaDos10_30: {
       type: String,
       default: "",
     },
-    horaSiete: {
+    horaUno11_00: {
       type: String,
       default: "",
     },
-    horaOcho: {
+    horaDos11_50: {
       type: String,
       default: "",
     },
-    horaNueve: {
+    horaUno11_50: {
       type: String,
       default: "",
     },
-    horaDiez: {
+    horaDos12_40: {
       type: String,
       default: "",
     },
-    horaOnce: {
+    horaUno12_40: {
       type: String,
       default: "",
     },
-    horaDoce: {
+    horaDos13_30: {
+      type: String,
+      default: "",
+    },
+    horaUno6_00: {
+      type: String,
+      default: "",
+    },
+    horaDos6_40: {
+      type: String,
+      default: "",
+    },
+    horaUno6_40: {
+      type: String,
+      default: "",
+    },
+    horaDos7_20: {
+      type: String,
+      default: "",
+    },
+    horaUno7_20: {
+      type: String,
+      default: "",
+    },
+    horaDos8_00: {
+      type: String,
+      default: "",
+    },
+    horaUno8_00pm: {
+      type: String,
+      default: "",
+    },
+    horaDos8_40: {
+      type: String,
+      default: "",
+    },
+    horaUno8_40: {
+      type: String,
+      default: "",
+    },
+    horaDos9_20: {
+      type: String,
+      default: "",
+    },
+    horaUno9_20: {
+      type: String,
+      default: "",
+    },
+    horaDos10_00: {
       type: String,
       default: "",
     },
